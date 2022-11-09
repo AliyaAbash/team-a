@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% from "includes/formhelpers.html" import render_field %}
+
+<h4>
+    <strong>
+        Works
+    </strong>
+</h4>
+<hr>
+
+<form method="POST">
+    {{ render_field(form.users_id, class="form-control") }}
+    {{ render_field(form.project, class="form-control") }}
+    {{ render_field(form.skill, class="form-control") }}
+    
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<hr>
+
+
+
+{% endblock body %}
