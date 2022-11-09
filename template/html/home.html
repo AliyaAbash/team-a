@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+{% block body %}
+
+<style>
+    body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Images used */
+.img1 { background-image: url("https://img.freepik.com/free-vector/people-using-online-library-horizontal-isometric-concept-blue-3d_1284-31705.jpg?w=2000");}
+.img2 { background-image: url("https://library.yale.edu/sites/default/files/beinecke.jpg"); }
+.img3 { background-image: url("https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGxpYnJhcnklMjBib29rc3xlbnwwfHwwfHw%3D&w=1000&q=80"); }
+.img4 { background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAipag6KYzLoi2YHPWCvVUq6TCyFcWmdwnajuSmGyVn6Nhpg1vnoj8XEd9EOqcE4yMKhM&usqp=CAU"); }
+.img5 { background-image: url("https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGxpYnJhcnklMjBib29rc3xlbnwwfHwwfHw%3D&w=1000&q=80"); }
+.img6 { background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7X3pVWOSBwv-UWI0c4KXqRgtCdHnIdVY6cw&usqp=CAU"); }
+.img7 {background-image: url("https://static01.nyt.com/images/2015/10/24/opinion/24manguel/24manguel-superJumbo.jpg")}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 20px 50px;
+  border: 10px solid #f1f1f1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+</style>
+<div class="topnav">
+    {% if session.logged_in %}
+		<a href="/logout/">Logout</a>
+        <a href="/about/">About</a>
+        <a href="/works">Works</a>
+        <a href="/session">All Works</a>
+        <a href="/library">Library</a>
+        
+	{% else %}
+		<a href="/login/">Login</a>
+		<a href="/register/">Sign up</a>
+    <a href="/about/">About</a>
+    
+
+	{% endif %}
+</div>
+<hr>
+
+{% if session['logged_in'] %}
+ <div class="bg-text">
+    <h5>Welcome, {{session['username'] }}</h5>
+    <p>Email: {{session['email']}} </p>
+    <p>ID: {{session['id']}} </p>
+    <p>Full Name: {{session['fullname']}} </p>
+    
+    
+  </div>
+  <div class="bg-image img7"></div>
+
+  <h3>Select a file to upload</h3>
+        <p>
+         {% with messages = get_flashed_messages() %}
+           {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-primary">
+             <strong>{{ message }}</strong>
+           </div>
+          {% endfor %}
+           {% endif %}
+         {% endwith %}
+        </p>
+  <form method="post" action="/upload" enctype="multipart/form-data">
+    Username : <input type="text" name="username" value="" placeholder="Username" required>
+    <dl>
+  <p>
+   <input type="file" name="inputFile" autocomplete="off" required>
+  </p>
+    </dl>
+    <p>
+  <input type="submit" value="Submit">
+ </p>
+</form>
+{% else %}  
+ 
+
+<div class="bg-image img1"></div>
+<div class="bg-image img2"></div>
+<div class="bg-image img3"></div>
+<div class="bg-image img4"></div>
+<div class="bg-image img5"></div>
+<div class="bg-image img6"></div>
+
+<div class="bg-text">QOSH</div>
+
+  
+{% endif %}
+
+{% endblock body %}
+</html>
