@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+<body>
+  
+<div class="topnav">
+    {% if session.logged_in %}
+		<a href="/logout/">Logout</a>
+        <a href="/">Back</a>
+        <a href="/about/">About</a>
+	{% else %}
+        <a href="/">Back</a>
+		    <a href="/login/">Login</a>
+		    <a href="/register/">Sign up</a>
+        <a href="/about/">About</a>
+	{% endif %}
+</div>
+
+<div class="about-section">
+  <h1>Library</h1>  
+</div>
+
+
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-8 products">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="product">
+            <div class="product-img">
+              <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK5IihBujgFhc843Y1CkhQUts8iqXUryJafQ&usqp=CAU" alt=""></a>
+            </div>
+            <p class="product-title">
+              <a href="/very_fine_pdf/Koul_Tysyacha-nezabyvaemyh-poceluev-@ebooks_kaz1.pdf">Read</a>
+              <p class="product-price">Koul Tysyacha - nezabyvaemyh poceluev</p>
+            </p>
+            
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="product">
+            <div class="product-img">
+              <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK5IihBujgFhc843Y1CkhQUts8iqXUryJafQ&usqp=CAU" alt=""></a>
+            </div>
+            <p class="product-title">
+              <a href="/very_fine_pdf/majkl_greger-ne_sdohni_eda_v_borbe_za_zhizn-@ebooks_kaz1.pdf">Read</a>
+            </p>
+            <p class="product-desc">majkl greger - ne sdohni eda v borbe za zhizn</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="product">
+            <div class="product-img">
+              <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK5IihBujgFhc843Y1CkhQUts8iqXUryJafQ&usqp=CAU" alt=""></a>
+            </div>
+            <p class="product-title">
+              <a href="/very_fine_pdf/ute_erhardt_horoshie_devochki_otpravlyayutsya_na_nebesa_a_pl@ebooks">Read</a>
+            </p>
+            <p class="product-price">ute erhardt horoshie devochki otpravlyayutsya na nebesa</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="product">
+            <div class="product-img">
+              <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK5IihBujgFhc843Y1CkhQUts8iqXUryJafQ&usqp=CAU" alt=""></a>
+            </div>
+            <p class="product-title">
+              <a href="/very_fine_pdf/Әр күніңді әсемде.pdf">Read</a>
+            </p>
+            <p class="product-price">Әр күніңді әсемде</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="product">
+            <div class="product-img">
+              <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK5IihBujgFhc843Y1CkhQUts8iqXUryJafQ&usqp=CAU" alt=""></a>
+            </div>
+            <p class="product-title">
+              <a href="/very_fine_pdf/Нетревожные_отношения_Лесли_БеккерФелпс@ebooks_kaz1.pdf">Read</a>
+            </p>
+            
+            <p class="product-price">Нетревожные отношения - Лесли Беккер Фелпс</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="product">
+            <div class="product-img">
+              <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK5IihBujgFhc843Y1CkhQUts8iqXUryJafQ&usqp=CAU" alt=""></a>
+            </div>
+            <p class="product-title">
+              <a href="/very_fine_pdf/Оң қол.pdf">Read</a>
+            </p>
+            
+            <p class="product-price">Оң қол</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>
